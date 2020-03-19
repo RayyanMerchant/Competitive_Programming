@@ -1,0 +1,53 @@
+TODO - :
+
+1. Implement solutions to problem C and problem D of recent codeforces Div 3 round.
+
+2. Study DP subsequence problems like LIS and try https://codeforces.com/problemset/problem/977/F.
+
+3. Bipartite graph :
+	to undestand teh editorial of A problem here : https://codeforces.com/blog/entry/5285
+	even though I have solved the problem even then learn bipartite graph to understand the
+	terminology used.
+	
+4. Graph topics left to learn
+		1. Implement Tarjan for strongly connected components
+		2. Topological Sort
+		3. Dijkstra 
+		4. Floyd-warshall
+		5. Bellman Ford
+		6. Kruskal Spanning Tree
+		7. Prims Spanning Tree
+		8. Articulation Points and Biconnected Graphs
+		9. Graph colouring eg: 2 colours, bipartite graph etc
+		
+		https://www.hackerearth.com/practice/algorithms/graphs/graph-representation/tutorial/
+		
+		
+		Hacker Earth has a lot of the topics required
+			Graph Representation
+			Breadth First Search
+			Depth First Search
+			Minimum Spanning Tree
+			Shortest Path Algorithms
+			Flood-fill Algorithm
+			Articulation Points and Bridges
+			Biconnected Components
+			Strongly Connected Components
+			Topological Sort
+			Hamiltonian Path
+			Maximum flow
+			Minimum Cost Maximum Flow
+			Min-cut
+
+
+
+
+5. Tree Topics left to learn
+		1. Euler Tour
+		2. LCA(Lowest Common Ancestor)
+		
+
+
+
+
+

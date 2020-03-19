@@ -1,0 +1,11 @@
+
+
+
+
+https://stackoverflow.com/questions/27655955/why-does-binary-search-algorithm-use-floor-and-not-ceiling-not-in-an-half-open
+
+
+
+
+
+

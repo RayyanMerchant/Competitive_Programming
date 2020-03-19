@@ -1,0 +1,12 @@
+
+
+Do :
+	1. Graph colouring eg: 2 colours, bipartite graph etc
+	2. Dijkstra also learn a little bit about priority queues
+	
+
+
+
+
+
+
