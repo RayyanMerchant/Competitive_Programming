@@ -8,12 +8,19 @@
 
 
 
+---------------------------------------------------------------------------------------------
 
 
+isprime prime function
 
-
-
-
+bool isprime(int n)
+{
+	if(n <= 1) return false;
+	for(int i = 2; i * i <= n; ++ i)
+		if(n % i == 0)
+			return false;
+	return true;
+}
 
 
 
@@ -199,6 +206,46 @@ vector<pii> get_prime(int n)
 		
 	}
 	if(n != 1)prime.push_back({n, 1});
+	return prime;
+}
+
+
+using sieve O(n) precomputation and then logn factorization
+very fast but requires max range of input variable to be the order of 10 ^ 7
+
+
+const int maxn = 1e5;
+int spf[maxn + 1];
+void precompute()
+{
+	for (int i = 2; i <= maxn; i++) 
+	{
+		if (!spf[i]) 
+		{
+			spf[i] = i;
+			for (int j = i + i; j <= maxn; j += i)
+			{
+				if(!spf[j])
+					spf[j] = i;
+			}
+		}
+	}
+}
+
+vector<pii> get_prime(int n)
+{
+	vector<pii> prime;
+	while(n != 1)
+	{
+		int cur = spf[n];
+		int cnt = 0;
+		while(spf[n] == cur)
+		{
+			n /= spf[n];
+			++ cnt;
+		}
+		prime.emplace_back(cur, cnt);
+	}
 	return prime;
 }
 
