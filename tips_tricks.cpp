@@ -8,6 +8,46 @@
 
 
 
+
+
+---------------------------------------------------------------------------------------------
+
+longest suffix equal to prefix
+
+vector<int> z_function(string s) {
+    int n = (int) s.length();
+    vector<int> z(n);
+    for (int i = 1, l = 0, r = 0; i < n; ++i) {
+        if (i <= r)
+            z[i] = min (r - i + 1, z[i - l]);
+        while (i + z[i] < n && s[z[i]] == s[i + z[i]])
+            ++z[i];
+        if (i + z[i] - 1 > r)
+            l = i, r = i + z[i] - 1;
+    }
+    return z;
+}
+
+string func(string s)
+{
+	string og = s;
+	int n = s.size();
+	s += "#" + s;
+	vector<int> z = z_function(s);
+	int mx = 0;
+	for(int i = n + 2; i < z.size(); ++ i)
+	{
+		if(i + z[i] == (int) z.size())
+		{
+			mx = max(z[i], mx);
+		}
+	}
+	return og.substr(0 + mx);
+}
+
+
+
+
 ---------------------------------------------------------------------------------------------
 
 
