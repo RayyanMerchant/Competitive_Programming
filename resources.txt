@@ -1,0 +1,49 @@
+
+
+----------------------------------------------------------------------------------------------------------------
+
+Trie Resources :-
+1. Pastebin with 2D array implementation
+https://pastebin.ubuntu.com/p/HfWhrsTwq3/
+
+2. Tutorial on Trie and example problems | HackerEarth
+https://www.hackerearth.com/practice/notes/lalitkundu95/tutorial-on-trie-and-example-problems/
+
+
+
+----------------------------------------------------------------------------------------------------------------
+generate all possible sequeneces using bruteforce
+
+https://codeforces.com/problemset/problem/852/G
+
+----------------------------------------------------------------------------------------------------------------
+
+
+
+https://codesea.wordpress.com/code-library/
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,6 +7,28 @@
 
 
 
+---------------------------------------------------------------------------------------------
+
+subsequence check
+
+bool issubseq(string s, string t)
+{
+	// check if s is a subsequence of t
+	int ps = 0, pt = 0;
+	while(ps < s.size() && pt < t.size())
+	{
+		if(s[ps] == t[pt])
+		{
+			++ ps; ++ pt;
+		}
+		else
+		{
+			++ pt;
+		}
+	}
+	return ps == s.size();
+}
+
 
 
 

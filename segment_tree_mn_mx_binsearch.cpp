@@ -99,11 +99,13 @@ void debug_out(Head H, Tail... T) {
 typedef pair<int, int> pii;
 const int mod = (int) 1000000007; // 998244353;
 
-const int inf = 1e17;
 int n;
 const int maxn = 4e5;
 vector<int> done(maxn, -1);
 vector<int> a;
+
+
+const int inf = 1e17;
 struct node
 {
 	int mx, mn, mnid, mxid;
@@ -163,6 +165,8 @@ pii mnq(int v, int tl, int tr, int l, int r) {
     return min(mnq(v*2, tl, tm, l, min(r, tm))
            , mnq(v*2+1, tm+1, tr, max(l, tm+1), r));
 }
+
+
 
 int morethan(int l, int r, int val)
 {
