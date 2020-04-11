@@ -105,7 +105,7 @@ vector<int> done(maxn, -1);
 vector<int> a;
 
 
-const int inf = 1e17;
+const int inf = 2e18;
 struct node
 {
 	int mx, mn, mnid, mxid;
