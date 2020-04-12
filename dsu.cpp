@@ -1,9 +1,10 @@
-
-vector<int> dsu(maxn);
-vector<int> sz(maxn);
+vector<int> dsu;
+vector<int> sz;
 
 void init(int n)
 {
+	dsu.resize(n + 10);
+	sz.resize(n + 10);
 	for(int i = 0; i <= n; ++ i)
 	{
 		dsu[i] = i;
