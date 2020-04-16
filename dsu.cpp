@@ -1,14 +1,14 @@
 vector<int> dsu;
-vector<int> sz;
+vector<int> num;
 
 void init(int n)
 {
 	dsu.resize(n + 10);
-	sz.resize(n + 10);
+	num.resize(n + 10);
 	for(int i = 0; i <= n; ++ i)
 	{
 		dsu[i] = i;
-		sz[i] = 1;
+		num[i] = 1;
 	}
 }
 
@@ -23,8 +23,8 @@ void merge(int u, int v)
 	v = root(v);
 	if(u != v)
 	{
-		if(sz[u] < sz[v]) swap(u, v);
-		sz[u] += sz[v];
+		if(num[u] < num[v]) swap(u, v);
+		num[u] += num[v];
 		dsu[v] = u;
 	}
 }
