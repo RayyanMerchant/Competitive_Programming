@@ -1,4 +1,14 @@
 /*
+Problem : https://codeforces.com/problemset/problem/1042/D
+Editorial : https://codeforces.com/blog/entry/61891 has fenwick tree order statistics
+using pair to get multiset oset is a trick given in the github link
+Here I changes less<T> to greater<T> because I wanted a value strictly greater than and used 
+infinity in the size to make sure that {2, 0} didn't get included so it is like 
+searchong for {2, 10^18} it will never return any instance of 2 it will only count the number
+of elements greater than 2 i.e : 3.
+*/
+
+/*
 https://codeforces.com/blog/entry/11080
 https://stackoverflow.com/questions/44238144/order-statistics-tree-using-gnu-pbds-for-multiset
 */
@@ -108,8 +118,8 @@ typedef pair<int, int> pii;
 const int mod = (int) 1000000007; // 998244353;
 const int inf = (int) 2e18;
 template <typename T>
-using ordered_set =
-    tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+using oset =
+    tree<T, null_type, greater<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 int32_t main()
 {
@@ -117,27 +127,33 @@ int32_t main()
     cin.tie(NULL);
     cout << fixed << setprecision(9);
     
-    ordered_set <pii> st;
-    st.insert({1, 2});
-    st.insert({1, 3});
-    st.insert({2, 2});
-    st.insert({-1, 4});
-    
-    pii is = *st.find_by_order(0);
-    cout << is.first << " " << is.second << '\n';
+	int n, t;
+	cin >> n >> t;
+	vector<int> a(n + 1, 0), pre(n + 1, 0);
+	for(int i = 1; i <= n; ++ i)
+		cin >> a[i];
+	for(int i = 1; i <= n; ++ i)
+		pre[i] = pre[i - 1] + a[i];
+	
+	oset<pii> st;
+    int sz = 0;
+	
+	st.insert({0, ++ sz});
+	int ans = 0;
+	for(int i = 1; i <= n; ++ i)
+	{
+		int want = pre[i] - t;
+		int cnt = st.order_of_key({want, inf});
+		ans += cnt;
+		st.insert({pre[i], ++ sz});
+	}
+	
+	cout << ans << '\n';
     
     return 0;
 }
 
-/*
-won't compile on windows use jdoodle 
-Link : https://www.jdoodle.com/online-compiler-c++17/
-*/
-/*
-Functions -:
-st.insert(x) : inserts x into the set
-*st.find_by_order : 0 indexed and returns iterator so * must be used to get the value
-*/
+
 
 
 
