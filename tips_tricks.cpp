@@ -73,21 +73,6 @@ string func(string s)
 ---------------------------------------------------------------------------------------------
 
 
-isprime prime function
-
-bool isprime(int n)
-{
-	if(n <= 1) return false;
-	for(int i = 2; i * i <= n; ++ i)
-		if(n % i == 0)
-			return false;
-	return true;
-}
-
-
-
----------------------------------------------------------------------------------------------
-
 Longest prefix palindrome for suffix reverse and input into the function
 
 
@@ -231,7 +216,40 @@ int mypow(int x, int y)
     return res; 
 } 
 
+
 ---------------------------------------------------------------------------------------------
+
+Returns vector of all the divisors of the number
+vector<int> get_divisor(int n)
+{
+	vector<int> ans;
+	for(int i = 1; i * i <= n; ++ i)
+	{
+		if(n % i == 0)
+		{
+			ans.push_back(i);
+			if(n / i != i)
+				ans.push_back(n / i);
+		}
+	}
+	sort(all(ans));
+	return ans;
+}
+---------------------------------------------------------------------------------------------
+
+
+is_prime isprime prime function
+
+bool is_prime(int n)
+{
+	if(n <= 1) return false;
+	for(int i = 2; i * i <= n; ++ i)
+		if(n % i == 0)
+			return false;
+	return true;
+}
+
+
 
 Returns vector of all the prime factors of a number
 
