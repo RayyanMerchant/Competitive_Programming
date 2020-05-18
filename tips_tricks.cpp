@@ -205,17 +205,26 @@ Fast power, fast pow, fast exponentiation non modular
 
 int mypow(int x, int y) 
 { 
-    int res = 1;       
+	int res = 1;       
 	while (y > 0) 
-    { 
-        if (y & 1) 
-            res = (res * x); 
-		y = y >> 1;
-        x = (x * x);   
-    } 
-    return res; 
+	{ 
+		if (y & 1) 
+			res = (res * x); 
+		y >>= 1;
+		x *= x;   
+	} 
+	return res; 
 } 
 
+Normal power : 
+
+int mypow(int x, int y)
+{
+	int res = 1;
+	for(int i = 1; i <= y; ++ i)
+		res *= x;
+	return res;
+}
 
 ---------------------------------------------------------------------------------------------
 
