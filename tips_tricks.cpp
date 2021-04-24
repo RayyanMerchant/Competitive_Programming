@@ -1,8 +1,19 @@
 
 
 
+---------------------------------------------------------------------------------------------
 
+Split a sentence into words
 
+vector<string> split(string str, char delim) {
+	istringstream iss(str);
+	string token;
+	vector<string> result;
+	while(getline(iss, token, delim)) {
+		result.push_back(token);
+	}
+	return result;
+} 
 
 
 
